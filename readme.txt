@@ -1,0 +1,1 @@
+this is a color prest of store a data in a browser. 
