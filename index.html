@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Color Options</title>
+	<style type="text/css">
+		button {
+		  border: medium none;
+		  box-shadow: 0 6px 10px #000;
+		  color: #222;
+		  letter-spacing: 4px;
+		  margin-left: 12px;
+		  margin-top: 12px;
+		  padding: 8px;
+		  text-transform: uppercase;
+		}
+	</style>
+</head>
+<body>
+	<div class="btn-color">
+		<button>color change</button>
+	</div>
+	<script type="text/javascript">
+		var btn = document.querySelector('button');
+		function contu(number)
+		{
+			return Math.floor(Math.random() * (number + 1));
+		}
+		btn.onclick = function ()
+		{
+			var ranCol = 'rgb(' + contu(255) + ',' + contu(255) + ',' + contu(255) + ')';
+			document.body.style.backgroundColor = ranCol;
+			localStorage.setItem('color', ranCol);
+		};
+		window.onload=function()
+		{
+			if(localStorage.lenght !== 0)
+			{
+				document.body.style.backgroundColor=localStorage.color;
+				btn=localStorage.color;
+			}
+		}      
+	</script>
+</body>
+</html>
